@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Это главная страница</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Записей нет</p>
+    {% endif %}
+{% endblock %}
+
+
+{% block main_button %}
+class="nav-link active" aria-current="page"
+{% endblock %}
+
+{% block about_button %}
+class="nav-link"
+{% endblock %}
+
+{% block create_button %}
+class="nav-link"
+{% endblock %}

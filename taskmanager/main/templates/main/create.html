@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создание задания
+{% endblock %}
+
+{% block content %}
+    <h4>Создание задачи</h4>
+    <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.task }}<br>
+<!--            <input type="text" placeholder="Введите название" class="form-control"><br>-->
+<!--            <textarea placeholder="Введите описание" class="form-control"></textarea><br>-->
+            <button type="submit" class="btn btn-success">Добавить</button>
+
+    </form>
+{% endblock %}
+
+{% block main_button %}
+class="nav-link"
+{% endblock %}
+
+{% block about_button %}
+class="nav-link"
+{% endblock %}
+
+{% block create_button %}
+class="nav-link active" aria-current="page"
+{% endblock %}
